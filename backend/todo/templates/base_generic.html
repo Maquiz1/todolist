@@ -1,0 +1,174 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Todo App{% endblock %}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+      :root {
+        --bg-gradient: linear-gradient(135deg, #1e1e2e, #0f0f16);
+        --card-bg: rgba(30, 30, 46, 0.65);
+        --nav-bg: rgba(20, 20, 35, 0.7);
+        --primary: #89b4fa;
+        --secondary: #cba6f7;
+        --text: #cdd6f4;
+        --text-muted: #a6adc8;
+        --border: rgba(255, 255, 255, 0.08);
+        --accent: #f38ba8;
+      }
+      
+      body {
+        margin: 0;
+        font-family: 'Outfit', sans-serif;
+        background: var(--bg-gradient);
+        color: var(--text);
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+      
+      /* Navigation Bar */
+      .navbar {
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        background: var(--nav-bg);
+        border-bottom: 1px solid var(--border);
+        padding: 0.8rem 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.15);
+      }
+      
+      .nav-logo {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: var(--primary);
+        text-decoration: none;
+        background: linear-gradient(90deg, var(--primary), var(--secondary));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        transition: opacity 0.3s;
+      }
+      
+      .nav-logo:hover {
+        opacity: 0.85;
+      }
+      
+      .nav-links {
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+      }
+      
+      .nav-item {
+        color: var(--text-muted);
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 0.95rem;
+        transition: color 0.25s, transform 0.25s;
+      }
+      
+      .nav-item:hover {
+        color: var(--text);
+        transform: translateY(-1px);
+      }
+      
+      .nav-item.active {
+        color: var(--primary);
+      }
+      
+      .nav-auth {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        margin-left: 1rem;
+        border-left: 1px solid var(--border);
+        padding-left: 1rem;
+      }
+      
+      .user-info {
+        font-size: 0.85rem;
+        color: var(--text-muted);
+      }
+      
+      .user-info strong {
+        color: var(--secondary);
+      }
+      
+      .btn-auth {
+        padding: 0.4rem 0.9rem;
+        border-radius: 8px;
+        font-weight: 600;
+        text-decoration: none;
+        font-size: 0.85rem;
+        transition: all 0.25s;
+        border: 1px solid transparent;
+      }
+      
+      .btn-login {
+        background: transparent;
+        color: var(--primary);
+        border-color: var(--primary);
+      }
+      
+      .btn-login:hover {
+        background: rgba(137, 180, 250, 0.1);
+        transform: translateY(-1px);
+      }
+      
+      .btn-logout {
+        background: var(--accent);
+        color: #11111b;
+      }
+      
+      .btn-logout:hover {
+        background: #f7a0b9;
+        transform: translateY(-1px);
+        box-shadow: 0 0 12px rgba(243, 139, 168, 0.35);
+      }
+
+      /* Main container spacing */
+      .main-content {
+        flex: 1;
+        padding: 2rem;
+        max-width: 1200px;
+        width: -webkit-fill-available;
+        margin: 0 auto;
+      }
+    </style>
+    {% block extra_css %}{% endblock %}
+</head>
+<body>
+    <nav class="navbar">
+        <a href="{% url 'dashboard-home' %}" class="nav-logo">⚡ DashTodo</a>
+        <div class="nav-links">
+            <a href="{% url 'dashboard-home' %}" class="nav-item">Dashboard</a>
+            <a href="{% url 'home' %}" class="nav-item">Todo List</a>
+            <a href="{% url 'note-list' %}" class="nav-item">Notes</a>
+            
+            <div class="nav-auth">
+                {% if user.is_authenticated %}
+                    <span class="user-info">Logged in as <strong>{{ user.username }}</strong></span>
+                    <form action="{% url 'logout' %}" method="post" style="display: inline;">
+                        {% csrf_token %}
+                        <button type="submit" class="btn-auth btn-logout" style="border: none; cursor: pointer; font-family: inherit;">Logout</button>
+                    </form>
+                {% else %}
+                    <a href="{% url 'login' %}" class="btn-auth btn-login">Login</a>
+                {% endif %}
+            </div>
+        </div>
+    </nav>
+    <main class="main-content">
+        {% block content %}{% endblock %}
+    </main>
+</body>
+</html>

@@ -1,0 +1,20 @@
+{% extends "base_generic.html" %}
+
+{% block title %}{% if form.instance.pk %}Edit Note{% else %}Add Note{% endif %}{% endblock %}
+
+{% block content %}
+<div class="container">
+  <h1 class="title">{% if form.instance.pk %}Edit Note{% else %}Add New Note{% endif %}</h1>
+  <form method="post" class="note-form">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="add-button">Save</button>
+  </form>
+</div>
+{% endblock %}
+
+{% block extra_css %}
+<style>
+/* Reuse existing styles */
+</style>
+{% endblock %}

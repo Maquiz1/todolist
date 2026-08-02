@@ -1,0 +1,101 @@
+{% extends "base_generic.html" %}
+
+{% block title %}Dashboard Home{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1 class="welcome-title">Welcome to your Dashboard</h1>
+    <p class="welcome-subtitle">Select a service below to get started or manage your workflow.</p>
+    <div class="cards">
+        <a href="{% url 'home' %}" class="card">
+            <div class="card-icon">🚀</div>
+            <h2>Todo List</h2>
+            <p>Manage your tasks, track progress, and organize your day.</p>
+        </a>
+        <a href="{% url 'note-list' %}" class="card">
+            <div class="card-icon">📝</div>
+            <h2>Notes</h2>
+            <p>Capture your thoughts, write down reminders, and save ideas.</p>
+        </a>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_css %}
+<style>
+    .container {
+        text-align: center;
+        max-width: 900px;
+        margin: 4rem auto;
+    }
+    
+    .welcome-title {
+        font-size: 2.8rem;
+        font-weight: 700;
+        margin-bottom: 0.5rem;
+        background: linear-gradient(135deg, #cba6f7, #89b4fa);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+    
+    .welcome-subtitle {
+        color: var(--text-muted);
+        font-size: 1.1rem;
+        margin-bottom: 3rem;
+    }
+    
+    .cards {
+        display: grid;
+        gap: 2rem;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
+    
+    .card {
+        background: var(--card-bg);
+        border: 1px solid var(--border);
+        border-radius: 20px;
+        padding: 2.5rem 2rem;
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        color: var(--text);
+        text-decoration: none;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        cursor: pointer;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+    
+    .card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 20px 40px rgba(137, 180, 250, 0.15);
+        border-color: rgba(137, 180, 250, 0.3);
+    }
+    
+    .card-icon {
+        font-size: 3rem;
+        margin-bottom: 1.5rem;
+        transition: transform 0.3s;
+    }
+    
+    .card:hover .card-icon {
+        transform: scale(1.15) rotate(5deg);
+    }
+    
+    .card h2 {
+        margin: 0 0 0.8rem 0;
+        font-size: 1.8rem;
+        font-weight: 600;
+        color: var(--primary);
+    }
+    
+    .card p {
+        margin: 0;
+        font-size: 1rem;
+        line-height: 1.6;
+        color: var(--text-muted);
+        text-align: center;
+    }
+</style>
+{% endblock %}

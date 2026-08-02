@@ -1,0 +1,37 @@
+{% extends "base_generic.html" %}
+
+{% block title %}Task Detail{% endblock %}
+
+{% block content %}
+<div class="container">
+  <h1 class="title">{{ task.title }}</h1>
+  <div class="detail-card">
+    {% if task.description %}
+      <p class="detail-desc">{{ task.description }}</p>
+    {% else %}
+      <p class="detail-desc">No description provided.</p>
+    {% endif %}
+    <p class="detail-meta"><strong>Status:</strong> {% if task.completed %}✅ Completed{% else %}🕒 Pending{% endif %}</p>
+    <p class="detail-meta"><strong>Created:</strong> {{ task.created_at|date:"M d, Y H:i" }}</p>
+    <p class="detail-meta"><strong>Last updated:</strong> {{ task.updated_at|date:"M d, Y H:i" }}</p>
+    <a href="{% url 'home' %}" class="back-button">← Back to list</a>
+  </div>
+</div>
+{% endblock %}
+
+{% block extra_css %}
+<style>
+  :root { --bg: #f0f4ff; --card-bg: rgba(255,255,255,0.9); --primary: #4a90e2; --text: #222; }
+  body { background: linear-gradient(135deg,#e0eafc,#cfdef3); font-family: 'Inter',sans-serif; color: var(--text); margin:0; padding:2rem; }
+  .title { text-align:center; margin-bottom:1.5rem; font-size:2.2rem; color: var(--primary); }
+  .detail-card { backdrop-filter:blur(8px); background:var(--card-bg); border-radius:12px; padding:1.5rem; max-width:600px; margin:0 auto; box-shadow:0 4px 12px rgba(0,0,0,0.1); }
+  .detail-desc { margin:1rem 0; font-size:1rem; }
+  .detail-meta { margin:.5rem 0; font-size:.9rem; color:#555; }
+  .back-button { display:inline-block; margin-top:1rem; color:var(--primary); text-decoration:none; font-weight:600; }
+  .back-button:hover { text-decoration:underline; }
+  @media (prefers-color-scheme: dark) {
+    body { background:#1a1a2e; color:#ddd; }
+    .detail-card { background:rgba(20,20,30,0.85); }
+  }
+</style>
+{% endblock %}

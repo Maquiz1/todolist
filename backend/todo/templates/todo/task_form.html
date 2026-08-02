@@ -1,0 +1,29 @@
+{% extends "base_generic.html" %}
+
+{% block title %}Add Task{% endblock %}
+
+{% block content %}
+<div class="container">
+  <h1 class="title">Add New Task</h1>
+  <form method="post" class="task-form">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="submit-button">Create</button>
+  </form>
+</div>
+{% endblock %}
+
+{% block extra_css %}
+<style>
+  :root { --bg: #f0f4ff; --primary: #4a90e2; --text: #222; }
+  body { background: linear-gradient(135deg, #e0eafc, #cfdef3); font-family: 'Inter', sans-serif; color: var(--text); }
+  .title { text-align: center; margin-bottom: 1.5rem; font-size: 2rem; color: var(--primary); }
+  .task-form { max-width: 400px; margin: 0 auto; display: flex; flex-direction: column; gap: 1rem; }
+  .task-form input[type="text"], .task-form textarea { width: 100%; padding: 0.5rem; border: 1px solid #ccc; border-radius: 4px; }
+  .submit-button { background: var(--primary); color: #fff; border: none; padding: 0.6rem 1.2rem; border-radius: 6px; cursor: pointer; font-weight: 600; }
+  .submit-button:hover { background: #357ab8; }
+  @media (prefers-color-scheme: dark) {
+    body { background: #1a1a2e; color: #ddd; }
+  }
+</style>
+{% endblock %}

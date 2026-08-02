@@ -1,0 +1,48 @@
+{% extends "base_generic.html" %}
+
+{% block title %}All Tasks{% endblock %}
+
+{% block content %}
+<div class="container">
+  <h1 class="title">All Tasks</h1>
+  <a href="{% url 'add-task' %}" class="add-button">+ Add New Task</a>
+  <div class="task-grid">
+    {% for task in tasks %}
+    <div class="task-card {% if task.completed %}completed{% endif %}">
+      <h2 class="task-title"><a href="{% url 'task-detail' task.pk %}">{{ task.title }}</a></h2>
+
+      <p class="task-meta">Created: {{ task.created_at|date:"M d, Y H:i" }}</p>
+      <p class="task-status">Status: {% if task.completed %}✅ Completed{% else %}🕒 Pending{% endif %}</p>
+      <div class="task-actions">
+        <a href="{% url 'task-edit' task.pk %}" class="action-button edit-button">Edit</a>
+        <a href="{% url 'task-delete' task.pk %}" class="action-button delete-button">Delete</a>
+      </div>
+    </div>
+    {% empty %}
+    <p>No tasks found.</p>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}
+
+{% block extra_css %}
+<style>
+  .title { margin-bottom:2rem; font-size:2.5rem; color:var(--primary); font-weight:700; }
+  .add-button { display:inline-block; margin-bottom:2rem; padding:0.6rem 1.2rem; background:linear-gradient(135deg, var(--primary), var(--secondary)); color:#11111b; border-radius:10px; text-decoration:none; font-weight:700; transition: transform 0.25s, box-shadow 0.25s; }
+  .add-button:hover { transform: translateY(-2px); box-shadow: 0 5px 15px rgba(137, 180, 250, 0.3); }
+  .task-grid { display:grid; gap:1.5rem; grid-template-columns:repeat(auto-fill, minmax(280px,1fr)); }
+  .task-card { backdrop-filter:blur(8px); background:var(--card-bg); border: 1px solid var(--border); border-radius:16px; padding:1.5rem; box-shadow:0 4px 30px rgba(0,0,0,0.1); transition:transform .2s,box-shadow .2s; }
+  .task-card:hover { transform:translateY(-4px); box-shadow:0 8px 25px rgba(137, 180, 250, 0.15); border-color: rgba(137, 180, 250, 0.25); }
+  .task-card.completed { opacity:0.6; }
+  .task-title { margin:0 0 .5rem; font-size:1.35rem; }
+  .task-title a { color:var(--text); text-decoration:none; transition: color 0.2s; }
+  .task-title a:hover { color:var(--primary); }
+  .task-meta,.task-status { font-size:.85rem; color:var(--text-muted); margin-top:.5rem; }
+  .task-actions { margin-top: 1rem; display: flex; gap: 0.5rem; }
+  .action-button { padding: 0.4rem 0.8rem; border-radius: 8px; font-size: 0.85rem; text-decoration: none; font-weight: 600; transition: all 0.2s; }
+  .edit-button { background: rgba(137, 180, 250, 0.1); color: var(--primary); border: 1px solid rgba(137, 180, 250, 0.3); }
+  .edit-button:hover { background: var(--primary); color: #11111b; }
+  .delete-button { background: rgba(243, 139, 168, 0.1); color: var(--accent); border: 1px solid rgba(243, 139, 168, 0.3); }
+  .delete-button:hover { background: var(--accent); color: #11111b; }
+</style>
+{% endblock %}

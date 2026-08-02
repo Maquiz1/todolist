@@ -1,0 +1,47 @@
+{% extends "base_generic.html" %}
+
+{% block title %}My Notes{% endblock %}
+
+{% block content %}
+<div class="container">
+  <h1 class="title">My Notes</h1>
+  <a href="{% url 'note-add' %}" class="add-button">+ Add New Note</a>
+  <div class="note-grid">
+    {% for note in notes %}
+    <div class="note-card">
+      <h2 class="note-title"><a href="{% url 'note-detail' note.pk %}">{{ note.title }}</a></h2>
+      <p class="note-tags">{% if note.tags %}Tags: {{ note.tags }}{% endif %}</p>
+      <p class="note-meta">Created: {{ note.created_at|date:"M d, Y H:i" }}</p>
+      <div class="note-actions">
+        <a href="{% url 'note-edit' note.pk %}" class="action-button edit-button">Edit</a>
+        <a href="{% url 'note-delete' note.pk %}" class="action-button delete-button">Delete</a>
+      </div>
+    </div>
+    {% empty %}
+    <p>No notes yet.</p>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}
+
+{% block extra_css %}
+<style>
+  .title { margin-bottom:2rem; font-size:2.5rem; color:var(--primary); font-weight:700; }
+  .add-button { display:inline-block; margin-bottom:2rem; padding:0.6rem 1.2rem; background:linear-gradient(135deg, var(--primary), var(--secondary)); color:#11111b; border-radius:10px; text-decoration:none; font-weight:700; transition: transform 0.25s, box-shadow 0.25s; }
+  .add-button:hover { transform: translateY(-2px); box-shadow: 0 5px 15px rgba(137, 180, 250, 0.3); }
+  .note-grid { display:grid; gap:1.5rem; grid-template-columns:repeat(auto-fill, minmax(280px,1fr)); }
+  .note-card { backdrop-filter:blur(8px); background:var(--card-bg); border: 1px solid var(--border); border-radius:16px; padding:1.5rem; box-shadow:0 4px 30px rgba(0,0,0,0.1); transition:transform .2s,box-shadow .2s; }
+  .note-card:hover { transform:translateY(-4px); box-shadow:0 8px 25px rgba(137, 180, 250, 0.15); border-color: rgba(137, 180, 250, 0.25); }
+  .note-title { margin:0 0 .5rem; font-size:1.35rem; }
+  .note-title a { color:var(--text); text-decoration:none; transition: color 0.2s; }
+  .note-title a:hover { color:var(--primary); }
+  .note-tags { font-size:.9rem; color:var(--secondary); margin-bottom:.5rem; font-weight: 600; }
+  .note-meta { font-size:.85rem; color:var(--text-muted); margin-top:.5rem; }
+  .note-actions { margin-top: 1rem; display: flex; gap: 0.5rem; }
+  .action-button { padding: 0.4rem 0.8rem; border-radius: 8px; font-size: 0.85rem; text-decoration: none; font-weight: 600; transition: all 0.2s; }
+  .edit-button { background: rgba(137, 180, 250, 0.1); color: var(--primary); border: 1px solid rgba(137, 180, 250, 0.3); }
+  .edit-button:hover { background: var(--primary); color: #11111b; }
+  .delete-button { background: rgba(243, 139, 168, 0.1); color: var(--accent); border: 1px solid rgba(243, 139, 168, 0.3); }
+  .delete-button:hover { background: var(--accent); color: #11111b; }
+</style>
+{% endblock %}

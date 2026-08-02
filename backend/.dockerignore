@@ -1,0 +1,11 @@
+venv-todolist/
+venv/
+.git/
+.gitignore
+db.sqlite3
+__pycache__/
+*.pyc
+staticfiles/
+.env
+Dockerfile
+docker-compose.yml

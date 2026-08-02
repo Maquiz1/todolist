@@ -1,0 +1,29 @@
+# Environments
+.env
+.env.*
+venv-todolist/
+venv/
+ENV/
+env/
+
+# Python Cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# Database
+db.sqlite3
+db.sqlite3-journal
+db_seed.json
+
+# Static files
+backend/staticfiles/
+staticfiles/
+
+# IDEs & System
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db

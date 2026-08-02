@@ -1,0 +1,26 @@
+{% extends "base_generic.html" %}
+
+{% block title %}Delete Task{% endblock %}
+
+{% block content %}
+<div class="container">
+  <h1 class="title">Delete Task</h1>
+  <p>Are you sure you want to delete "{{ object.title }}"?</p>
+  <form method="post">
+    {% csrf_token %}
+    <button type="submit" class="submit-button">Confirm Delete</button>
+    <a href="{% url 'home' %}" class="cancel-button">Cancel</a>
+  </form>
+</div>
+{% endblock %}
+
+{% block extra_css %}
+<style>
+  :root { --bg: #f0f4ff; --primary: #4a90e2; --text: #222; }
+  body { background: linear-gradient(135deg, #e0eafc, #cfdef3); font-family: 'Inter', sans-serif; color: var(--text); }
+  .title { text-align: center; margin-bottom: 1.5rem; font-size: 2rem; color: var(--primary); }
+  .submit-button { background: var(--primary); color:#fff; border:none; padding:0.6rem 1.2rem; border-radius:6px; cursor:pointer; font-weight:600; }
+  .submit-button:hover { background:#357ab8; }
+  .cancel-button { margin-left:1rem; color:var(--primary); text-decoration:none; font-weight:600; }
+</style>
+{% endblock %}

@@ -1,0 +1,28 @@
+{% extends "base_generic.html" %}
+
+{% block title %}{{ note.title }}{% endblock %}
+
+{% block content %}
+<div class="container">
+  <h1 class="title">{{ note.title }}</h1>
+  <p class="note-content">{{ note.content|linebreaks }}</p>
+  {% if note.tags %}
+    <p class="note-tags">Tags: {{ note.tags }}</p>
+  {% endif %}
+  <p class="note-meta">Created: {{ note.created_at|date:"M d, Y H:i" }}</p>
+  <p class="note-meta">Updated: {{ note.updated_at|date:"M d, Y H:i" }}</p>
+  <div class="note-actions">
+    <a href="{% url 'note-edit' note.pk %}" class="action-button edit-button">Edit</a>
+    <a href="{% url 'note-delete' note.pk %}" class="action-button delete-button">Delete</a>
+    <a href="{% url 'note-list' %}" class="action-button">Back to list</a>
+  </div>
+</div>
+{% endblock %}
+
+{% block extra_css %}
+<style>
+/* Re‑use the same card styles as the list view */
+.container { max-width: 800px; margin: auto; }
+.note-content { margin: 1rem 0; line-height: 1.5; }
+</style>
+{% endblock %}
