@@ -76,10 +76,15 @@ WSGI_APPLICATION = 'config.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
+DATABASE_URL = os.getenv('DATABASE_URL')
+if not DATABASE_URL:
+    raise RuntimeError("The DATABASE_URL environment variable is not set.")
+
 DATABASES = {
     'default': dj_database_url.config(
-        default=f"sqlite:///{BASE_DIR / 'db.sqlite3'}",
-        conn_max_age=600
+        default=DATABASE_URL,
+        conn_max_age=600,
+        engine='django.db.backends.postgresql'
     )
 }
 
@@ -122,7 +127,7 @@ USE_TZ = True
 # STATIC_ROOT = BASE_DIR / 'staticfiles'
 
 STATIC_URL = "/static/"
-STATIC_ROOT = Path('/opt/todolist/backend/staticfiles') if os.getenv('USE_HOST_PATH', 'True').lower() in ('true','1','yes') else BASE_DIR / "staticfiles"
+STATIC_ROOT = BASE_DIR / "staticfiles"
 
 MEDIA_URL = "media/"
 MEDIA_ROOT = BASE_DIR / "media"
