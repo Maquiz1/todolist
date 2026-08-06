@@ -19,15 +19,12 @@ services:
     container_name: todolist_web
     command: /app/entrypoint.sh
     volumes:
-      - ./backend:/app
+      - /opt/todolist/backend:/app
+      - /opt/todolist/backend/staticfiles:/app/staticfiles
     ports:
-      - "8000:8000"
-    environment:
-      - DATABASE_URL=postgres://todo_user:todo_secure_pass@db:5432/todolist_db
-      - SECRET_KEY=replace_this_with_a_long_random_string_in_production
-      - DEBUG=False
-      - ALLOWED_HOSTS=*
-      - LOAD_SEED_DATA=true
+      - "80:8000"
+    env_file:
+      - /opt/todolist/backend/.env
     depends_on:
       - db
     restart: always
