@@ -12,13 +12,12 @@ Steps:
    - `docker-compose.yml` uses `/opt/todolist/backend` for the web service.
    - `backend/.env` contains production DB and `ALLOWED_HOSTS`.
 
-3. Run (on the server):
+3. Run deployment script (on server):
 
 ```bash
-sudo mkdir -p /opt/todolist/backend/staticfiles
-sudo chown $USER:$USER /opt/todolist -R
 cd /opt/todolist
-docker compose up -d --build
+chmod +x deploy.sh
+./deploy.sh
 ```
 
 4. Verify containers are running:
