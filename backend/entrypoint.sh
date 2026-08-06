@@ -25,7 +25,7 @@ python manage.py collectstatic --noinput
 
 if [ "$LOAD_SEED_DATA" = "true" ]; then
     echo "Loading database seed data..."
-    python manage.py loaddata db_seed.json || true
+    python manage.py loaddata /app/db_seed.json || true
 fi
 
 echo "Starting Gunicorn server..."
