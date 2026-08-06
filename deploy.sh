@@ -24,7 +24,8 @@ fi
 # 2. Pull latest code from git (if git repository)
 if [ -d ".git" ]; then
     echo "📥 Pulling latest changes from git..."
-    git pull origin main || git pull origin develop || true
+    CURRENT_BRANCH=$(git rev-parse --abbrev-ref HEAD)
+    git pull origin "$CURRENT_BRANCH" || true
 fi
 
 # 3. Create required runtime directories
