@@ -1,0 +1,327 @@
+[
+{
+    "model": "auth.user",
+    "fields": {
+        "password": "pbkdf2_sha256$600000$wJI8f5Q9wbBQy1LHOkYohN$583XR+tOQwv3GtstPcnoYNdW1/oCN3NiqvPc1kNjVUw=",
+        "last_login": "2026-08-02T01:34:37.005Z",
+        "is_superuser": true,
+        "username": "admin",
+        "first_name": "",
+        "last_name": "",
+        "email": "admin@example.com",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2026-08-02T01:18:56.027Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "j8eshfpoy5o73xlzcxcnyr7zd8bdv9w8",
+    "fields": {
+        "session_data": ".eJxVjEEOwiAQRe_C2hCQaTu4dO8ZyAwDUjUlKe3KeHdD0oVu_3vvv1WgfSthb2kNs6iLsur0uzHFZ1o6kAct96pjXbZ1Zt0VfdCmb1XS63q4fweFWum1ZAEkjngWEE_WOgRwxjMnK-jHSZiscYApI_CQhSYYgKIZPUdh9fkCAeg4wA:1wqL65:QpYYD12-NlPomSHvSSKsI0FajRuk9usRaEj_CfVHayc",
+        "expire_date": "2026-08-16T01:34:37.010Z"
+    }
+},
+{
+    "model": "todo.task",
+    "pk": 1,
+    "fields": {
+        "title": "Bahari HMS",
+        "description": "Hospital Management System",
+        "completed": false,
+        "created_at": "2026-08-01T17:23:42.380Z",
+        "updated_at": "2026-08-01T17:40:40.027Z"
+    }
+},
+{
+    "model": "todo.task",
+    "pk": 2,
+    "fields": {
+        "title": "RECAPEN",
+        "description": "PENPLUS AND NCD's Mnagement",
+        "completed": false,
+        "created_at": "2026-08-01T17:28:18.047Z",
+        "updated_at": "2026-08-01T17:28:18.047Z"
+    }
+},
+{
+    "model": "todo.task",
+    "pk": 3,
+    "fields": {
+        "title": "inventory",
+        "description": "inventory",
+        "completed": false,
+        "created_at": "2026-08-01T17:30:45.092Z",
+        "updated_at": "2026-08-01T17:30:45.092Z"
+    }
+},
+{
+    "model": "todo.task",
+    "pk": 4,
+    "fields": {
+        "title": "Bahari Pharmacy",
+        "description": "Pharmacy & Inventory",
+        "completed": false,
+        "created_at": "2026-08-01T17:31:21.825Z",
+        "updated_at": "2026-08-01T17:41:15.751Z"
+    }
+},
+{
+    "model": "todo.task",
+    "pk": 5,
+    "fields": {
+        "title": "ELIMS",
+        "description": "ELIMS",
+        "completed": false,
+        "created_at": "2026-08-01T17:31:51.721Z",
+        "updated_at": "2026-08-01T17:31:51.721Z"
+    }
+},
+{
+    "model": "todo.task",
+    "pk": 6,
+    "fields": {
+        "title": "MRC",
+        "description": "MRC",
+        "completed": false,
+        "created_at": "2026-08-01T17:32:10.199Z",
+        "updated_at": "2026-08-01T17:32:10.199Z"
+    }
+},
+{
+    "model": "todo.task",
+    "pk": 7,
+    "fields": {
+        "title": "POS",
+        "description": "POS",
+        "completed": false,
+        "created_at": "2026-08-01T17:32:18.881Z",
+        "updated_at": "2026-08-01T17:32:18.881Z"
+    }
+},
+{
+    "model": "todo.task",
+    "pk": 8,
+    "fields": {
+        "title": "TAMRIS",
+        "description": "TAMRIS",
+        "completed": false,
+        "created_at": "2026-08-01T17:33:12.644Z",
+        "updated_at": "2026-08-01T17:33:12.644Z"
+    }
+},
+{
+    "model": "todo.task",
+    "pk": 9,
+    "fields": {
+        "title": "Bahari School",
+        "description": "School Management System",
+        "completed": false,
+        "created_at": "2026-08-01T17:35:18.281Z",
+        "updated_at": "2026-08-01T17:41:44.045Z"
+    }
+},
+{
+    "model": "todo.task",
+    "pk": 10,
+    "fields": {
+        "title": "Bahari Data",
+        "description": "Data Management & Analytics",
+        "completed": false,
+        "created_at": "2026-08-01T17:35:41.758Z",
+        "updated_at": "2026-08-01T17:42:23.510Z"
+    }
+},
+{
+    "model": "todo.task",
+    "pk": 11,
+    "fields": {
+        "title": "Bahari Cloud",
+        "description": "Hosting Services",
+        "completed": false,
+        "created_at": "2026-08-01T17:35:59.298Z",
+        "updated_at": "2026-08-01T17:42:04.409Z"
+    }
+},
+{
+    "model": "todo.task",
+    "pk": 12,
+    "fields": {
+        "title": "Bahari Wallet",
+        "description": "Bahari Wallet",
+        "completed": false,
+        "created_at": "2026-08-01T17:36:18.751Z",
+        "updated_at": "2026-08-01T17:36:18.752Z"
+    }
+},
+{
+    "model": "todo.task",
+    "pk": 13,
+    "fields": {
+        "title": "Bahari Ads",
+        "description": "Digital Advertising Platform",
+        "completed": false,
+        "created_at": "2026-08-01T17:37:50.531Z",
+        "updated_at": "2026-08-01T17:43:07.773Z"
+    }
+},
+{
+    "model": "todo.task",
+    "pk": 14,
+    "fields": {
+        "title": "Bahari ERP",
+        "description": "Enterprise Resource Planning",
+        "completed": false,
+        "created_at": "2026-08-01T17:38:09.676Z",
+        "updated_at": "2026-08-01T17:40:12.201Z"
+    }
+},
+{
+    "model": "todo.task",
+    "pk": 15,
+    "fields": {
+        "title": "Bahari Web",
+        "description": "Website Design & Development",
+        "completed": false,
+        "created_at": "2026-08-01T17:38:43.315Z",
+        "updated_at": "2026-08-01T17:42:43.078Z"
+    }
+},
+{
+    "model": "todo.task",
+    "pk": 16,
+    "fields": {
+        "title": "Bahari CRM",
+        "description": "Customer Relationship Management",
+        "completed": false,
+        "created_at": "2026-08-01T17:39:10.838Z",
+        "updated_at": "2026-08-01T17:51:37.843Z"
+    }
+},
+{
+    "model": "todo.task",
+    "pk": 17,
+    "fields": {
+        "title": "BRAND AND COMPANY NAME",
+        "description": "Bahari Technologies Ltd\r\nBahari Systems Ltd\r\nBahari Innovations Ltd\r\nBahari Tech\r\nBahari Data & Digital\r\n\r\nSwahili Digital Technologies\r\nSwahili Digital Solutions\r\nSwahili Cloud\r\nSwahili Data\r\n\r\nNexora Technologies Ltd ⭐⭐⭐⭐⭐\r\nVertex Technologies Ltd ⭐⭐⭐⭐⭐\r\nDataForge Technologies Ltd ⭐⭐⭐⭐⭐\r\nNovaCore Technologies Ltd ⭐⭐⭐⭐⭐\r\nCoreVista Technologies Ltd ⭐⭐⭐⭐☆\r\nAxion Digital Solutions Ltd ⭐⭐⭐⭐☆\r\nInsightCore Technologies Ltd ⭐⭐⭐⭐☆\r\nCloudMatrix Technologies Ltd ⭐⭐⭐⭐☆\r\nElevate Technologies Ltd ⭐⭐⭐⭐☆\r\nDataSphere Solutions Ltd\r\n\r\n\r\nDataNova Technologies\r\nNexora Technologies\r\nTalexa Solutions\r\nSynora Technologies\r\nVelora Systems\r\nAxion Digital\r\nQuantix Technologies\r\nNovacore Technologies\r\nCoreVista Technologies\r\nNexBridge Solutions\r\n\r\n\r\nModern Tech Brands\r\nDataNova Technologies\r\nNexora Technologies\r\nTalexa Solutions\r\nSynora Technologies\r\nVelora Systems\r\nAxion Digital\r\nQuantix Technologies\r\nNovacore Technologies\r\nCoreVista Technologies\r\nNexBridge Solutions\r\n\r\nData & Analytics Focus\r\nDataForge Technologies\r\nDataSphere Solutions\r\nInsightCore Technologies\r\nDataPulse Africa\r\nIntelliData Solutions\r\nPrime Data Technologies\r\nSmartMetrics Systems\r\nDataNest Technologies\r\nDataAxis Solutions\r\nPrecision Data Labs\r\n\r\n\r\nSoftware & Cloud\r\nCloudMatrix Technologies\r\nNovaCloud Systems\r\nSkyBridge Technologies\r\nCloudFusion Africa\r\nVertex Systems\r\nBlueCore Technologies\r\nZenith Digital Solutions\r\nTechNest Solutions\r\nCodeSphere Technologies\r\nLogicPoint Systems\r\n\r\n\r\nAfrican Identity\r\nUbuntu Digital Technologies\r\nKijani Technologies\r\nRafiki Systems\r\nAfriData Solutions\r\nEastPoint Technologies\r\nNileTech Solutions\r\nSwahili Digital\r\nUmoja Technologies\r\nBahari Digital\r\nKilimanjaro Technologies\r\n\r\nPremium Corporate Names\r\n\r\nThese sound like companies that could serve banks, NGOs, hospitals, and governments.\r\n\r\nVertex Technologies Ltd\r\nApex Digital Solutions Ltd\r\nOptima Systems Ltd\r\nIntelliCore Technologies Ltd\r\nNexus Solutions Ltd\r\nElevate Technologies Ltd\r\nOrion Data Systems Ltd\r\nPolaris Technologies Ltd\r\nInfinity Digital Ltd\r\nHorizon Systems Ltd\r\n\r\nIf your core business is business software\r\n\r\nYou could market products like:\r\n\r\nCareFlow HMS – Hospital Management System\r\nPharmaTrack – Pharmacy & Inventory\r\nSchoolSphere – School Management System\r\nStockFlow – Inventory Management\r\nClinicPro – Clinic Management\r\nHRConnect – Human Resources\r\nSalesPulse – POS & Sales\r\nInsightBI – Business Intelligence\r\nDataSync – ETL & Integration\r\nCloudHost – Hosting Platform\r\n\r\nAll under one parent company.\r\n\r\nExample:\r\n\r\nNexora Technologies Ltd\r\n\r\nProducts:\r\n\r\nNexora HMS\r\nNexora School\r\nNexora Pharmacy\r\nNexora Inventory\r\nNexora Cloud\r\nNexora Analytics\r\n\r\nThis creates a strong, consistent brand.\r\n\r\n\r\n\r\nExample branding:\r\n\r\nBahari Digital Ltd\r\nBahari Digital Solutions\r\nBahari Digital Technologies\r\nBahari Cloud\r\nBahari Data\r\nBahari HMS\r\nBahari School\r\nBahari Pharmacy\r\nBahari Ads\r\n\r\nTaglines:\r\n\r\nNavigating Digital Excellence.\r\nYour Digital Ocean of Innovation.\r\nBuilding the Future, Digitally.\r\nSmart Solutions for a Connected World",
+        "completed": false,
+        "created_at": "2026-08-01T17:48:13.215Z",
+        "updated_at": "2026-08-01T17:53:26.034Z"
+    }
+},
+{
+    "model": "todo.task",
+    "pk": 18,
+    "fields": {
+        "title": "DOMAINS",
+        "description": "baharidigital.com\r\nbaharidigital.co.tz\r\nbaharidigital.africa\r\nbaharitech.com\r\nbaharitech.co.tz\r\nswahilidigital.com\r\nswahilidigital.co.tz",
+        "completed": false,
+        "created_at": "2026-08-01T17:49:12.431Z",
+        "updated_at": "2026-08-01T17:49:12.431Z"
+    }
+},
+{
+    "model": "todo.task",
+    "pk": 19,
+    "fields": {
+        "title": "COMPANY NAMES",
+        "description": "Bahari Technologies Ltd\r\nBahari Systems Ltd\r\nBahari Innovations Ltd\r\nBahari Tech\r\nBahari Data & Digital",
+        "completed": true,
+        "created_at": "2026-08-01T17:49:37.089Z",
+        "updated_at": "2026-08-01T17:54:27.885Z"
+    }
+},
+{
+    "model": "todo.task",
+    "pk": 20,
+    "fields": {
+        "title": "BAHARI TIMBER",
+        "description": "For selling timbers,woods,mirunda,miti,mashamba and mabanzi and viwanja",
+        "completed": false,
+        "created_at": "2026-08-02T01:07:41.942Z",
+        "updated_at": "2026-08-02T01:07:41.942Z"
+    }
+},
+{
+    "model": "todo.task",
+    "pk": 21,
+    "fields": {
+        "title": "Bahari Timber",
+        "description": "Selling Timbers",
+        "completed": false,
+        "created_at": "2026-08-02T01:08:08.568Z",
+        "updated_at": "2026-08-02T01:08:08.568Z"
+    }
+},
+{
+    "model": "todo.task",
+    "pk": 22,
+    "fields": {
+        "title": "Bahari Mangi",
+        "description": "Duka la vitu vya kawaida,kama nafaka n.k",
+        "completed": false,
+        "created_at": "2026-08-02T01:08:58.582Z",
+        "updated_at": "2026-08-02T01:08:58.583Z"
+    }
+},
+{
+    "model": "todo.task",
+    "pk": 23,
+    "fields": {
+        "title": "Bahari Hotel",
+        "description": "Hotel managemnt systmes",
+        "completed": false,
+        "created_at": "2026-08-02T01:10:48.750Z",
+        "updated_at": "2026-08-02T01:10:48.750Z"
+    }
+},
+{
+    "model": "todo.task",
+    "pk": 24,
+    "fields": {
+        "title": "Bahari Restarant and Bar",
+        "description": "Bahari Restarant and Bar",
+        "completed": false,
+        "created_at": "2026-08-02T01:11:33.495Z",
+        "updated_at": "2026-08-02T01:11:33.495Z"
+    }
+},
+{
+    "model": "todo.task",
+    "pk": 25,
+    "fields": {
+        "title": "Library and Book store",
+        "description": "Library and Book store",
+        "completed": false,
+        "created_at": "2026-08-02T01:13:25.520Z",
+        "updated_at": "2026-08-02T01:13:25.520Z"
+    }
+},
+{
+    "model": "todo.task",
+    "pk": 26,
+    "fields": {
+        "title": "Bahari Dental Ckinic",
+        "description": "Bahari Dental Ckinic",
+        "completed": false,
+        "created_at": "2026-08-02T01:30:26.523Z",
+        "updated_at": "2026-08-02T01:30:26.523Z"
+    }
+},
+{
+    "model": "notes.note",
+    "pk": 1,
+    "fields": {
+        "user": [
+            "admin"
+        ],
+        "title": "try",
+        "content": "try test",
+        "tags": "",
+        "created_at": "2026-08-02T01:26:37.662Z",
+        "updated_at": "2026-08-02T01:26:37.662Z"
+    }
+}
+]

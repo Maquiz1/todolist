@@ -16,7 +16,6 @@ __pycache__/
 # Database
 db.sqlite3
 db.sqlite3-journal
-db_seed.json
 
 # Static files
 backend/staticfiles/
