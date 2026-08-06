@@ -34,12 +34,11 @@ mkdir -p "${BACKEND_DIR}/staticfiles"
 mkdir -p "${BACKEND_DIR}/media"
 
 # 4. Check for production .env file
-if [ ! -f "${BACKEND_DIR}/.env.docker" ] && [ ! -f "${BACKEND_DIR}/.env" ]; then
-    echo "⚠️ Warning: Neither .env.docker nor .env found in ${BACKEND_DIR}!"
-    echo "Creating a default ${BACKEND_DIR}/.env file..."
-    cat <<'EOF' > "${BACKEND_DIR}/.env"
-DEBUG=off
-SECRET_KEY=change-this-to-a-secure-random-secret-key-in-production
+if [ ! -f "${BACKEND_DIR}/.env.docker" ]; then
+    echo "Creating ${BACKEND_DIR}/.env.docker file..."
+    cat <<'EOF' > "${BACKEND_DIR}/.env.docker"
+DEBUG=on
+SECRET_KEY=django-insecure-prod-key-todolist-tamris-2026
 
 # PostgreSQL Database (docker-compose)
 DB_NAME=todolist_db
@@ -53,7 +52,13 @@ DATABASE_URL=postgres://todo_user:todo_secure_pass@db:5432/todolist_db
 LOAD_SEED_DATA=true
 ALLOWED_HOSTS=*
 EOF
-    echo "✅ Created ${BACKEND_DIR}/.env template."
+fi
+
+if [ -f "${BACKEND_DIR}/.env.docker" ]; then
+    sed -i 's/ALLOWED_HOSTS=.*/ALLOWED_HOSTS=*/g' "${BACKEND_DIR}/.env.docker"
+fi
+if [ -f "${BACKEND_DIR}/.env" ]; then
+    sed -i 's/ALLOWED_HOSTS=.*/ALLOWED_HOSTS=*/g' "${BACKEND_DIR}/.env"
 fi
 
 # 5. Build and launch Docker Compose services
